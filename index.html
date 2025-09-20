@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Kalaithai Silambam Academy, Dharmapuri - Learn traditional Silambam with modern discipline. Join weekend classes for all age groups.">
+  <title>Kalaithai Silambam Academy Dharmapuri</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- AOS (Animate on Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <!-- Swiper (Image Slider) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #facc15;
+      --secondary: #dc2626;
+      --dark: #111827;
+      --light: #f3f4f6;
+    }
+    
+    body {
+      font-family: 'Montserrat', sans-serif;
+      scroll-behavior: smooth;
+      background-color: var(--dark);
+      color: var(--light);
+    }
+
+    a:focus, button:focus, input:focus, select:focus, textarea:focus {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+    }
+
+    /* Hero Overlay */
+    .hero-overlay {
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7));
+    }
+
+    /* Gallery Hover Effect */
+    .swiper-slide {
+      overflow: hidden;
+      border-radius: 0.75rem;
+    }
+    
+    .swiper-slide img {
+      transition: transform 0.5s ease;
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+    
+    .swiper-slide:hover img {
+      transform: scale(1.1);
+    }
+
+    /* Floating WhatsApp Button */
+    #whatsapp-btn {
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    
+    #whatsapp-btn:hover {
+      background-color: #128C7E;
+      transform: translateY(-3px);
+    }
+    
+    /* Back to top button */
+    #back-to-top {
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    
+    #back-to-top:hover {
+      background-color: var(--secondary);
+      transform: translateY(-3px);
+    }
+    
+    /* Custom form styling */
+    .form-input {
+      transition: all 0.3s ease;
+    }
+    
+    .form-input:focus {
+      box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.3);
+    }
+    
+    /* Loading animation */
+    .loading {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border: 3px solid rgba(255,255,255,.3);
+      border-radius: 50%;
+      border-top-color: #fff;
+      animation: spin 1s ease-in-out infinite;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    
+    /* Mobile menu */
+    .mobile-menu {
+      transition: all 0.3s ease;
+    }
+    
+    /* Testimonial cards */
+    .testimonial-card {
+      transition: transform 0.3s ease;
+    }
+    
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    /* Pulse animation for CTA */
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    
+    .pulse {
+      animation: pulse 2s infinite;
+    }
+
+    /* Feature cards */
+    .feature-card {
+      transition: all 0.3s ease;
+      border: 1px solid transparent;
+    }
+    
+    .feature-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(250, 204, 21, 0.1);
+    }
+
+    /* Counter animation */
+    .counter {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: var(--primary);
+    }
+
+    .counter-animate {
+      animation: countUp 2s ease-out;
+    }
+
+    @keyframes countUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- Navigation Bar -->
+  <nav class="bg-black bg-opacity-90 p-4 sticky top-0 z-50 shadow-md">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <a href="#" class="text-2xl font-bold text-yellow-400 flex items-center">
+        <i class="fas fa-staff-snake mr-2"></i>Kalaithai Silambam
+      </a>
+      
+      <!-- Desktop Navigation -->
+      <ul class="hidden md:flex space-x-6 text-gray-200">
+        <li><a href="#about" class="hover:text-yellow-400 transition py-2" aria-label="About section">About</a></li>
+        <li><a href="#gallery" class="hover:text-yellow-400 transition py-2" aria-label="Gallery section">Gallery</a></li>
+        <li><a href="#classes" class="hover:text-yellow-400 transition py-2" aria-label="Classes section">Classes</a></li>
+        <li><a href="#achievements" class="hover:text-yellow-400 transition py-2" aria-label="Achievements section">Achievements</a></li>
+        <li><a href="#testimonials" class="hover:text-yellow-400 transition py-2" aria-label="Testimonials section">Testimonials</a></li>
+        <li><a href="#admission" class="hover:text-yellow-400 transition py-2" aria-label="Admission form section">Admission</a></li>
+        <li><a href="#contact" class="hover:text-yellow-400 transition py-2" aria-label="Contact section">Contact</a></li>
+      </ul>
+      
+      <!-- Mobile menu button -->
+      <button id="mobile-menu-button" class="md:hidden text-yellow-400 text-xl">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+    
+    <!-- Mobile Navigation -->
+    <div id="mobile-menu" class="mobile-menu hidden md:hidden bg-gray-800 mt-2 py-3 rounded-lg">
+      <ul class="space-y-2 px-4">
+        <li><a href="#about" class="block hover:text-yellow-400 transition py-2">About</a></li>
+        <li><a href="#gallery" class="block hover:text-yellow-400 transition py-2">Gallery</a></li>
+        <li><a href="#classes" class="block hover:text-yellow-400 transition py-2">Classes</a></li>
+        <li><a href="#achievements" class="block hover:text-yellow-400 transition py-2">Achievements</a></li>
+        <li><a href="#testimonials" class="block hover:text-yellow-400 transition py-2">Testimonials</a></li>
+        <li><a href="#admission" class="block hover:text-yellow-400 transition py-2">Admission</a></li>
+        <li><a href="#contact" class="block hover:text-yellow-400 transition py-2">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="h-screen flex flex-col justify-center items-center bg-cover bg-center text-center relative" 
+    style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('silambam4.jpg');">
+    <div class="hero-overlay p-8 rounded-xl max-w-3xl mx-4">
+      <h1 data-aos="zoom-in" class="text-4xl md:text-5xl lg:text-6xl font-bold text-yellow-400 mb-4">
+        Kalaithai Silambam Academy
+      </h1>
+      <p data-aos="fade-up" data-aos-delay="200" class="text-lg md:text-xl text-gray-200 mb-8">
+        Preserving Tradition • Building Discipline • Empowering Lives
+      </p>
+      <div data-aos="fade-up" data-aos-delay="400" class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#admission" 
+           class="px-6 py-3 bg-red-600 hover:bg-red-700 rounded-lg shadow-lg transition transform hover:scale-105 text-white font-semibold pulse"
+           aria-label="Join our classes">
+          Join Now
+        </a>
+        <a href="#contact" 
+           class="px-6 py-3 border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-gray-900 rounded-lg shadow-lg transition transform hover:scale-105 font-semibold"
+           aria-label="Contact us">
+          Contact Us
+        </a>
+      </div>
+    </div>
+    
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+      <a href="#about" class="text-yellow-400 text-4xl animate-bounce">
+        <i class="fas fa-chevron-down"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-16 px-4 md:px-10">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-yellow-400 mb-2 text-center" data-aos="fade-up">About Us</h2>
+      <div class="w-20 h-1 bg-red-600 mx-auto mb-8" data-aos="fade-up"></div>
+      
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div data-aos="fade-right">
+          <p class="text-gray-300 mb-6">
+            Kalaithai Silambam Academy is dedicated to teaching the ancient art of <span class="text-red-400 font-semibold">Silambam</span>, 
+            a traditional Indian martial art originating from Tamil Nadu. We combine traditional values with modern training methods 
+            to make this ancient discipline accessible and relevant for today's practitioners.
+          </p>
+          <p class="text-gray-300 mb-6">
+            Our weekend classes focus on <span class="text-yellow-300">physical fitness, mental discipline, and cultural heritage</span>, 
+            creating well-rounded individuals who excel both in martial arts and in life. Perfect for students and working professionals.
+          </p>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="flex items-center">
+              <div class="text-yellow-400 mr-2 text-xl"><i class="fas fa-check-circle"></i></div>
+              <span class="text-gray-300">Certified Instructors</span>
+            </div>
+            <div class="flex items-center">
+              <div class="text-yellow-400 mr-2 text-xl"><i class="fas fa-check-circle"></i></div>
+              <span class="text-gray-300">Weekend Classes Only</span>
+            </div>
+            <div class="flex items-center">
+              <div class="text-yellow-400 mr-2 text-xl"><i class="fas fa-check-circle"></i></div>
+              <span class="text-gray-300">All Age Groups</span>
+            </div>
+            <div class="flex items-center">
+              <div class="text-yellow-400 mr-2 text-xl"><i class="fas fa-check-circle"></i></div>
+              <span class="text-gray-300">Multiple Locations</span>
+            </div>
+          </div>
+        </div>
+        
+        <div data-aos="fade-left" class="relative">
+          <img src="https://images.unsplash.com/photo-1611944216950-6e9aef7ed77d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" 
+               alt="Silambam demonstration" 
+               class="rounded-xl shadow-lg w-full h-80 object-cover">
+          <div class="absolute -bottom-4 -left-4 w-24 h-24 border-4 border-yellow-400 rounded-lg z-10"></div>
+          <div class="absolute -top-4 -right-4 w-20 h-20 border-4 border-red-600 rounded-lg"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements Section -->
+  <section id="achievements" class="py-16 px-4 md:px-10 bg-gray-900">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-yellow-400 mb-2 text-center" data-aos="fade-up">Our Achievements</h2>
+      <div class="w-20 h-1 bg-red-600 mx-auto mb-8" data-aos="fade-up"></div>
+      
+      <div class="grid md:grid-cols-4 gap-8 text-center">
+        <div class="feature-card p-6 bg-gray-800 rounded-lg" data-aos="fade-up" data-aos-delay="0">
+          <i class="fas fa-trophy text-yellow-400 text-4xl mb-4"></i>
+          <div class="counter" data-target="500">0</div>
+          <p class="text-gray-300 text-sm uppercase tracking-wide">Students Trained</p>
+        </div>
+        <div class="feature-card p-6 bg-gray-800 rounded-lg" data-aos="fade-up" data-aos-delay="100">
+          <i class="fas fa-medal text-red-400 text-4xl mb-4"></i>
+          <div class="counter" data-target="25">0</div>
+          <p class="text-gray-300 text-sm uppercase tracking-wide">State Championships</p>
+        </div>
+        <div class="feature-card p-6 bg-gray-800 rounded-lg" data-aos="fade-up" data-aos-delay="200">
+          <i class="fas fa-users text-yellow-400 text-4xl mb-4"></i>
+          <div class="counter" data-target="8">0</div>
+          <p class="text-gray-300 text-sm uppercase tracking-wide">Years Experience</p>
+        </div>
+        <div class="feature-card p-6 bg-gray-800 rounded-lg" data-aos="fade-up" data-aos-delay="300">
+          <i class="fas fa-map-marker-alt text-red-400 text-4xl mb-4"></i>
+          <div class="counter" data-target="8">0</div>
+          <p class="text-gray-300 text-sm uppercase tracking-wide">Class Locations</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="py-16 px-4 md:px-10">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-yellow-400 mb-2 text-center" data-aos="fade-up">Gallery</h2>
+      <div class="w-20 h-1 bg-red-600 mx-auto mb-8" data-aos="fade-up"></div>
+      
+      <div data-aos="fade-in" class="swiper mySwiper rounded-xl shadow-xl">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                 alt="Silambam training session" loading="lazy">
+          </div>
+          <div class="swiper-slide">
+            <img src="https://images.unsplash.com/photo-1544464077-376d969d5b5a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                 alt="Students practicing Silambam" loading="lazy">
+          </div>
+          <div class="swiper-slide">
+            <img src="https://images.unsplash.com/photo-1611944216950-6e9aef7ed77d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" 
+                 alt="Silambam weapons training" loading="lazy">
+          </div>
+          <div class="swiper-slide">
+            <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                 alt="Group training session" loading="lazy">
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next text-yellow-400"></div>
+        <div class="swiper-button-prev text-yellow-400"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Classes Section -->
+  <section id="classes" class="py-16 px-4 md:px-10 bg-gray-900">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-yellow-400 mb-2 text-center" data-aos="fade-up">Weekend Class Timings</h2>
+      <div class="w-20 h-1 bg-red-600 mx-auto mb-8" data-aos="fade-up"></div>
+      
+      <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+        <div class="bg-gray-800 p-8 rounded-lg shadow-lg">
+          <div class="text-6xl text-yellow-400 mb-6">
+            <i class="fas fa-calendar-week"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-red-400 mb-4">Weekend Special Batch</h3>
+          <p class="text-gray-300 mb-2">Saturday & Sunday</p>
+          <p class="text-4xl font-bold text-yellow-400 mb-4">6:00 AM - 8:00 AM</p>
+          <p class="text-gray-400 mb-6">Perfect for students and working professionals seeking weekend training</p>
+          
+          <div class="grid md:grid-cols-2 gap-6 mt-8">
+            <div class="bg-gray-700 p-4 rounded-lg">
+              <h4 class="text-yellow-400 font-semibold mb-2"><i class="fas fa-child mr-2"></i>Beginner Classes</h4>
+              <p class="text-gray-300 text-sm">Ages 8+ | Foundation training</p>
+            </div>
+            <div class="bg-gray-700 p-4 rounded-lg">
+              <h4 class="text-yellow-400 font-semibold mb-2"><i class="fas fa-dumbbell mr-2"></i>Advanced Training</h4>
+              <p class="text-gray-300 text-sm">Ages 14+ | Competition preparation</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="mt-12" data-aos="fade-up">
+        <h3 class="text-xl font-bold text-yellow-400 text-center mb-4">Class Locations</h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+          <div class="flex items-center bg-gray-800 p-3 rounded-lg">
+            <i class="fas fa-map-marker-alt text-red-500 mr-2"></i>
+            <span class="text-gray-300 text-sm">Bharathipuram</span>
+          </div>
+          <div class="flex items-center bg-gray-800 p-3 rounded-lg">
+            <i class="fas fa-map-marker-alt text-red-500 mr-2"></i>
+            <span class="text-gray-300 text-sm">Oddapatti</span>
+          </div>
+          <div class="flex items-center bg-gray-800 p-3 rounded-lg">
+            <i class="fas fa-map-marker-alt text-red-500 mr-2"></i>
+            <span class="text-gray-300 text-sm">Housing Board</span>
+          </div>
+          <div class="flex items-center bg-gray-800 p-3 rounded-lg">
+            <i class="fas fa-map-marker-alt text-red-500 mr-2"></i>
+            <span class="text-gray-300 text-sm">Stadium</span>
+          </div>
+          <div class="flex items-center bg-gray-800 p-3 rounded-lg">
+            <i class="fas fa-map-marker-alt text-red-500 mr-2"></i>
+            <span class="text-gray-300 text-sm">Kurumpatti</span>
+          </div>
+          <div class="flex items-center bg-gray-800 p-3 rounded-lg">
+            <i class="fas fa-map-marker-alt text-red-500 mr-2"></i>
+            <span class="text-gray-300 text-sm">Nagarkudal</span>
+          </div>
+          <div class="flex items-center bg-gray-800 p-3 rounded-lg">
+            <i class="fas fa-map-marker-alt text-red-500 mr-2"></i>
+            <span class="text-gray-300 text-sm">SK Puthur</span>
+          </div>
+          <div class="flex items-center bg-gray-800 p-3 rounded-lg">
+            <i class="fas fa-map-marker-alt text-red-500 mr-2"></i>
+            <span class="text-gray-300 text-sm">Gettupatti</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="py-16 px-4 md:px-10">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-yellow-400 mb-2 text-center" data-aos="fade-up">What Our Students Say</h2>
+      <div class="w-20 h-1 bg-red-600 mx-auto mb-8" data-aos="fade-up"></div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="testimonial-card bg-gray-800 p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="0">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center text-gray-900 font-bold mr-3">RK</div>
+            <div>
+              <h4 class="text-yellow-400 font-semibold">Ravi Kumar</h4>
+              <p class="text-gray-400 text-sm">Student, 2 years</p>
+            </div>
+          </div>
+          <p class="text-gray-300 italic">"The weekend classes fit perfectly with my school schedule. My discipline and confidence have improved tremendously!"</p>
+          <div class="flex text-yellow-400 mt-4">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+        
+        <div class="testimonial-card bg-gray-800 p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="200">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center text-gray-900 font-bold mr-3">PS</div>
+            <div>
+              <h4 class="text-yellow-400 font-semibold">Priya S</h4>
+              <p class="text-gray-400 text-sm">Parent</p>
+            </div>
+          </div>
+          <p class="text-gray-300 italic">"My children love the weekend sessions. They've gained so much confidence and made great friends in the Silambam community."</p>
+          <div class="flex text-yellow-400 mt-4">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+        </div>
+        
+        <div class="testimonial-card bg-gray-800 p-6 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="400">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center text-gray-900 font-bold mr-3">AS</div>
+            <div>
+              <h4 class="text-yellow-400 font-semibold">Arun S</h4>
+              <p class="text-gray-400 text-sm">Working Professional</p>
+            </div>
+          </div>
+          <p class="text-gray-300 italic">"Weekend training is perfect for my busy schedule. Silambam helps me stay fit and focused throughout the workweek."</p>
+          <div class="flex text-yellow-400 mt-4">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Admission Form Section -->
+  <section id="admission" class="py-16 px-4 md:px-10 bg-gray-900">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-yellow-400 mb-2 text-center" data-aos="fade-up">Weekend Class Registration</h2>
+      <div class="w-20 h-1 bg-red-600 mx-auto mb-8" data-aos="fade-up"></div>
+      
+      <form id="admission-form" class="bg-gray-800 p-6 md:p-8 rounded-xl shadow-lg space-y-6" data-aos="fade-up">
+        <p class="text-gray-300 text-center mb-6">Join our weekend Silambam classes. Limited spots available - Register now!</p>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- Name -->
+          <div>
+            <label for="name" class="block mb-2 font-semibold text-gray-300">Full Name *</label>
+            <input type="text" id="name" name="name" required
+                   class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 focus:ring-2 focus:ring-yellow-400 form-input text-gray-200"
+                   aria-describedby="name-error">
+            <p id="name-error" class="text-red-400 text-sm mt-1 hidden">Please enter a valid name</p>
+          </div>
+
+          <!-- Phone -->
+          <div>
+            <label for="phone" class="block mb-2 font-semibold text-gray-300">Phone Number *</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required
+                   class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 focus:ring-2 focus:ring-yellow-400 form-input text-gray-200"
+                   placeholder="10-digit mobile number"
+                   aria-describedby="phone-error">
+            <p id="phone-error" class="text-red-400 text-sm mt-1 hidden">Please enter a valid 10-digit phone number</p>
+          </div>
+        </div>
+        
+        <!-- Address -->
+        <div>
+          <label for="address" class="block mb-2 font-semibold text-gray-300">Address *</label>
+          <textarea id="address" name="address" rows="3" required
+                    class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 focus:ring-2 focus:ring-yellow-400 form-input text-gray-200"
+                    aria-describedby="address-error"></textarea>
+          <p id="address-error" class="text-red-400 text-sm mt-1 hidden">Please enter a valid address</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- Aadhaar -->
+          <div>
+            <label for="aadhaar" class="block mb-2 font-semibold text-gray-300">Aadhaar Number *</label>
+            <input type="text" id="aadhaar" name="aadhaar" maxlength="12" pattern="[0-9]{12}" required
+                   class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 focus:ring-2 focus:ring-yellow-400 form-input text-gray-200"
+                   aria-describedby="aadhaar-error">
+            <p id="aadhaar-error" class="text-red-400 text-sm mt-1 hidden">Please enter a valid 12-digit Aadhaar number</p>
+          </div>
+
+          <!-- DOB -->
+          <div>
+            <label for="dob" class="block mb-2 font-semibold text-gray-300">Date of Birth (DD-MM-YYYY) *</label>
+            <input type="text" id="dob" name="dob" pattern="\d{2}-\d{2}-\d{4}" required
+                   class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 focus:ring-2 focus:ring-yellow-400 form-input text-gray-200"
+                   placeholder="DD-MM-YYYY"
+                   aria-describedby="dob-error">
+            <p id="dob-error" class="text-red-400 text-sm mt-1 hidden">Please enter a valid date (DD-MM-YYYY)</p>
+          </div>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- Guardian Name -->
+          <div>
+            <label for="guardian" class="block mb-2 font-semibold text-gray-300">Parent/Guardian Name *</label>
+            <input type="text" id="guardian" name="guardian" required
+                   class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 focus:ring-2 focus:ring-yellow-400 form-input text-gray-200"
+                   aria-describedby="guardian-error">
+            <p id="guardian-error" class="text-red-400 text-sm mt-1 hidden">Please enter a valid name</p>
+          </div>
+
+          <!-- School/College -->
+          <div>
+            <label for="school" class="block mb-2 font-semibold text-gray-300">School/College *</label>
+            <input type="text" id="school" name="school" required
+                   class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 focus:ring-2 focus:ring-yellow-400 form-input text-gray-200"
+                   aria-describedby="school-error">
+            <p id="school-error" class="text-red-400 text-sm mt-1 hidden">Please enter a valid school or college name</p>
+          </div>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- Standard -->
+          <div>
+            <label for="standard" class="block mb-2 font-semibold text-gray-300">Standard</label>
+            <input type="text" id="standard" name="standard"
+                   class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 focus:ring-2 focus:ring-yellow-400 form-input text-gray-200"
+                   aria-describedby="standard-error">
+            <p id="standard-error" class="text-red-400 text-sm mt-1 hidden">Please enter a valid standard</p>
+          </div>
+
+          <!-- Gender -->
+          <div>
+            <label class="block mb-2 font-semibold text-gray-300">Gender *</label>
+            <div class="flex gap-6 text-gray-300">
+              <label class="flex items-center">
+                <input type="radio" name="gender" value="Male" required class="mr-2" aria-label="Male"> Male
+              </label>
+              <label class="flex items-center">
+                <input type="radio" name="gender" value="Female" class="mr-2" aria-label="Female"> Female
+              </label>
+              <label class="flex items-center">
+                <input type="radio" name="gender" value="Other" class="mr-2" aria-label="Other"> Other
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Class Address Dropdown -->
+        <div>
+          <label for="class-address" class="block mb-2 font-semibold text-gray-300">Preferred Class Location *</label>
+          <select id="class-address" name="class-address" required
+                  class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 focus:ring-2 focus:ring-yellow-400 form-input text-gray-200"
+                  aria-describedby="class-address-error">
+            <option value="">-- Select Class Location --</option>
+            <option value="Bharathipuram">Bharathipuram</option>
+            <option value="Oddapatti">Oddapatti</option>
+            <option value="Housing Board">Housing Board</option>
+            <option value="Stadium">Stadium</option>
+            <option value="Kurumpatti">Kurumpatti</option>
+            <option value="Nagarkudal">Nagarkudal</option>
+            <option value="SK Puthur">SK Puthur</option>
+            <option value="Gettupatti">Gettupatti</option>
+          </select>
+          <p id="class-address-error" class="text-red-400 text-sm mt-1 hidden">Please select a class location</p>
+        </div>
+        
+        <!-- Batch Preference - Only Weekend -->
+        <div class="hidden">
+          <input type="hidden" name="batch" value="weekend">
+        </div>
+
+        <!-- Submit Button -->
+        <div class="text-center pt-4">
+          <button type="submit" id="submit-btn"
+                  class="bg-yellow-400 text-gray-900 font-bold px-8 py-3 rounded-lg hover:bg-yellow-300 transition transform hover:scale-105">
+            Submit Application
+          </button>
+          <div id="loading" class="hidden mt-4">
+            <div class="loading mx-auto"></div>
+            <p class="text-gray-300 mt-2">Processing your weekend class application...</p>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 px-4 md:px-10">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-yellow-400 mb-2 text-center" data-aos="fade-up">Contact Us</h2>
+      <div class="w-20 h-1 bg-red-600 mx-auto mb-8" data-aos="fade-up"></div>
+      
+      <div class="grid md:grid-cols-2 gap-12">
+        <div data-aos="fade-right">
+          <h3 class="text-xl font-semibold text-yellow-400 mb-4">Get in Touch</h3>
+          <div class="space-y-4">
+            <div class="flex items-start">
+              <div class="text-yellow-400 mt-1 mr-3 text-xl"><i class="fas fa-map-marker-alt"></i></div>
+              <div>
+                <h4 class="text-gray-300 font-semibold">Address</h4>
+                <p class="text-gray-400">Multiple weekend locations across Dharmapuri</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="text-yellow-400 mt-1 mr-3 text-xl"><i class="fas fa-phone-alt"></i></div>
+              <div>
+                <h4 class="text-gray-300 font-semibold">WhatsApp</h4>
+                <p class="text-gray-400"><a href="https://wa.me/+919080682245" class="text-yellow-400 hover:text-yellow-300">+91 90806 82245</a></p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="text-yellow-400 mt-1 mr-3 text-xl"><i class="fas fa-envelope"></i></div>
+              <div>
+                <h4 class="text-gray-300 font-semibold">Email</h4>
+                <p class="text-gray-400">info@kalaithaisilambam.com</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="text-yellow-400 mt-1 mr-3 text-xl"><i class="fas fa-clock"></i></div>
+              <div>
+                <h4 class="text-gray-300 font-semibold">Weekend Hours</h4>
+                <p class="text-gray-400">Sat & Sun: 6 AM - 8 AM</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-8">
+            <h3 class="text-xl font-semibold text-yellow-400 mb-4">Follow Us</h3>
+            <div class="flex space-x-4">
+              <a href="#" class="text-gray-400 hover:text-yellow-400 text-xl" aria-label="Facebook page">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-yellow-400 text-xl" aria-label="Instagram profile">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-yellow-400 text-xl" aria-label="YouTube channel">
+                <i class="fab fa-youtube"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-yellow-400 text-xl" aria-label="Twitter profile">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div data-aos="fade-left">
+          <h3 class="text-xl font-semibold text-yellow-400 mb-4">Quick Inquiry</h3>
+          <form class="space-y-4">
+            <div>
+              <label for="contact-name" class="block mb-2 text-gray-300">Your Name</label>
+              <input type="text" id="contact-name" 
+                     class="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 focus:ring-2 focus:ring-yellow-400 form-input text-gray-200">
+            </div>
+            
+            <div>
+              <label for="contact-email" class="block mb-2 text-gray-300">Your Email</label>
+              <input type="email" id="contact-email" 
+                     class="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 focus:ring-2 focus:ring-yellow-400 form-input text-gray-200">
+            </div>
+            
+            <div>
+              <label for="contact-message" class="block mb-2 text-gray-300">Message</label>
+              <textarea id="contact-message" rows="4" 
+                        class="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 focus:ring-2 focus:ring-yellow-400 form-input text-gray-200"></textarea>
+            </div>
+            
+            <button type="submit" 
+                    class="bg-yellow-400 text-gray-900 font-bold px-6 py-3 rounded-lg hover:bg-yellow-300 transition">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-black py-8 px-4 text-center">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex justify-center mb-6">
+        <a href="#" class="text-2xl font-bold text-yellow-400 flex items-center">
+          <i class="fas fa-staff-snake mr-2"></i>Kalaithai Silambam
+        </a>
+      </div>
+      
+      <ul class="flex flex-wrap justify-center space-x-6 text-gray-400 mb-6">
+        <li><a href="#about" class="hover:text-yellow-400 transition">About</a></li>
+        <li><a href="#gallery" class="hover:text-yellow-400 transition">Gallery</a></li>
+        <li><a href="#classes" class="hover:text-yellow-400 transition">Classes</a></li>
+        <li><a href="#achievements" class="hover:text-yellow-400 transition">Achievements</a></li>
+        <li><a href="#testimonials" class="hover:text-yellow-400 transition">Testimonials</a></li>
+        <li><a href="#admission" class="hover:text-yellow-400 transition">Admission</a></li>
+        <li><a href="#contact" class="hover:text-yellow-400 transition">Contact</a></li>
+      </ul>
+      
+      <p class="text-gray-500 text-sm">© 2025 Kalaithai Silambam Academy. All rights reserved. | Dharmapuri, Tamil Nadu</p>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a id="whatsapp-btn" href="https://wa.me/+919080682245?text=Hi,%20I'm%20interested%20in%20joining%20weekend%20Silambam%20classes" 
+     target="_blank" 
+     class="fixed bottom-6 right-6 w-14 h-14 bg-green-500 text-white rounded-full flex items-center justify-center text-2xl z-40"
+     aria-label="Contact us on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Back to top button -->
+  <button id="back-to-top" 
+          class="fixed bottom-6 left-6 w-14 h-14 bg-gray-800 text-yellow-400 rounded-full flex items-center justify-center text-2xl z-40 opacity-0 transition-opacity"
+          aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  
+  <script>
+    // Initialize AOS
+    document.addEventListener('DOMContentLoaded', function() {
+      AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true
+      });
+      
+      // Initialize Swiper
+      const swiper = new Swiper('.mySwiper', {
+        loop: true,
+        autoplay: {
+          delay: 5000,
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+
+      // Counter animation
+      function animateCounters() {
+        const counters = document.querySelectorAll('.counter');
+        counters.forEach(counter => {
+          const target = parseInt(counter.getAttribute('data-target'));
+          const increment = target / 100;
+          let current = 0;
+          
+          const updateCounter = () => {
+            if (current < target) {
+              current += increment;
+              counter.textContent = Math.floor(current);
+              setTimeout(updateCounter, 20);
+            } else {
+              counter.textContent = target;
+            }
+          };
+          
+          // Start animation when element is in view
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                updateCounter();
+                observer.unobserve(entry.target);
+              }
+            });
+          });
+          
+          observer.observe(counter);
+        });
+      }
+
+      animateCounters();
+      
+      // Mobile menu toggle
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      mobileMenuButton.addEventListener('click', function() {
+        mobileMenu.classList.toggle('hidden');
+      });
+      
+      // Close mobile menu when clicking on links
+      const mobileMenuLinks = document.querySelectorAll('#mobile-menu a');
+      mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          mobileMenu.classList.add('hidden');
+        });
+      });
+      
+      // Back to top button
+      const backToTopButton = document.getElementById('back-to-top');
+      
+      window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+          backToTopButton.classList.remove('opacity-0');
+        } else {
+          backToTopButton.classList.add('opacity-0');
+        }
+      });
+      
+      backToTopButton.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+      
+      // Form validation
+      const admissionForm = document.getElementById('admission-form');
+      const submitBtn = document.getElementById('submit-btn');
+      const loading = document.getElementById('loading');
+      
+      admissionForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Basic validation
+        let isValid = true;
+        const requiredFields = admissionForm.querySelectorAll('[required]');
+        
+        requiredFields.forEach(field => {
+          const errorElement = document.getElementById(`${field.id}-error`);
+          
+          if (!field.value.trim()) {
+            errorElement.classList.remove('hidden');
+            isValid = false;
+          } else {
+            errorElement.classList.add('hidden');
+          }
+          
+          // Specific validation for Aadhaar
+          if (field.id === 'aadhaar' && field.value.length !== 12) {
+            errorElement.classList.remove('hidden');
+            isValid = false;
+          }
+          
+          // Specific validation for phone
+          if (field.id === 'phone' && field.value.length !== 10) {
+            errorElement.classList.remove('hidden');
+            isValid = false;
+          }
+        });
+        
+        if (isValid) {
+          // Show loading state
+          submitBtn.classList.add('hidden');
+          loading.classList.remove('hidden');
+          
+          // Simulate form submission
+          setTimeout(function() {
+            alert('Weekend class registration submitted successfully! We will contact you within 24 hours to confirm your spot.');
+            admissionForm.reset();
+            submitBtn.classList.remove('hidden');
+            loading.classList.add('hidden');
+          }, 2000);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
