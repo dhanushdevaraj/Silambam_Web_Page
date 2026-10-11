@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+
+{% block title %}Class Schedule & Tuition Fees | {{ academy.name }}{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">TIMETABLE & PRICING</span>
+            <h1 class="section-title">Class Schedule & Fee Structure</h1>
+            <p class="section-desc">Transparent schedules, affordable tuition plans, and batch flexibility for students and working professionals.</p>
+        </div>
+
+        <!-- Filter Controls -->
+        <div class="filter-pills" style="justify-content: center; margin-bottom: 2rem;">
+            <button type="button" class="filter-pill schedule-filter-btn active" data-filter="all">All Batches</button>
+            <button type="button" class="filter-pill schedule-filter-btn" data-filter="kids">Kids (5-12 Yrs)</button>
+            <button type="button" class="filter-pill schedule-filter-btn" data-filter="adults">Adults & Youths</button>
+            <button type="button" class="filter-pill schedule-filter-btn" data-filter="weekend">Weekend Only</button>
+        </div>
+
+        <!-- Timetable Table -->
+        <div class="timetable-container" style="margin-bottom: 4rem;">
+            <table class="timetable-table">
+                <thead>
+                    <tr>
+                        <th>Batch Name</th>
+                        <th>Target Group</th>
+                        <th>Days of Training</th>
+                        <th>Class Timing</th>
+                        <th>Monthly Fee</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="timetable-row" data-category="adults">
+                        <td><span class="batch-tag tag-morning">Morning Warrior</span></td>
+                        <td>Adults & College Youths</td>
+                        <td>Monday, Wednesday, Friday</td>
+                        <td>6:00 AM – 7:15 AM</td>
+                        <td><strong style="color: var(--gold-light);">₹1,500 / mo</strong></td>
+                    </tr>
+                    <tr class="timetable-row" data-category="kids">
+                        <td><span class="batch-tag tag-evening">Junior Champions</span></td>
+                        <td>Kids (Ages 5 to 12)</td>
+                        <td>Tuesday, Thursday, Saturday</td>
+                        <td>5:00 PM – 6:15 PM</td>
+                        <td><strong style="color: var(--gold-light);">₹1,500 / mo</strong></td>
+                    </tr>
+                    <tr class="timetable-row" data-category="adults">
+                        <td><span class="batch-tag tag-evening">Evening General</span></td>
+                        <td>All Adults & Mixed Levels</td>
+                        <td>Monday, Wednesday, Friday</td>
+                        <td>6:30 PM – 8:00 PM</td>
+                        <td><strong style="color: var(--gold-light);">₹1,800 / mo</strong></td>
+                    </tr>
+                    <tr class="timetable-row" data-category="weekend">
+                        <td><span class="batch-tag tag-weekend">Weekend Intensive</span></td>
+                        <td>Working Professionals & Commuters</td>
+                        <td>Saturday & Sunday</td>
+                        <td>6:30 AM – 8:30 AM</td>
+                        <td><strong style="color: var(--gold-light);">₹1,200 / mo</strong></td>
+                    </tr>
+                    <tr class="timetable-row" data-category="adults">
+                        <td><span class="batch-tag tag-morning">Championship Squad</span></td>
+                        <td>Tournament Competitors</td>
+                        <td>Monday through Friday (5 Days)</td>
+                        <td>5:30 AM – 7:30 AM</td>
+                        <td><strong style="color: var(--gold-light);">₹2,500 / mo</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Interactive Fee Calculator -->
+        <div class="calc-card">
+            <h3 style="font-size: 1.8rem; margin-bottom: 0.5rem; text-align: center;">Interactive Tuition Fee Calculator</h3>
+            <p style="text-align: center; color: var(--text-secondary); margin-bottom: 2.5rem;">Select your training preference to estimate your quarterly or annual savings.</p>
+
+            <div class="calc-grid">
+                <div class="calc-options">
+                    <div class="form-group">
+                        <label for="calcBatch" class="form-label">Select Batch Frequency</label>
+                        <select id="calcBatch" class="form-control">
+                            <option value="1200">Weekend Intensive (2 Days/Week) — ₹1,200/mo</option>
+                            <option value="1500" selected>Regular Batch (3 Days/Week) — ₹1,500/mo</option>
+                            <option value="1800">Evening Advanced (3 Days/Week - 90 min) — ₹1,800/mo</option>
+                            <option value="2500">Championship Athlete (5 Days/Week) — ₹2,500/mo</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="calcCycle" class="form-label">Payment Term / Duration</label>
+                        <select id="calcCycle" class="form-control">
+                            <option value="1">Monthly (Standard)</option>
+                            <option value="3" selected>Quarterly (3 Months) — 10% Discount 🔥</option>
+                            <option value="12">Annual (1 Year) — 25% Discount 🏆</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" style="flex-direction: row; align-items: center; gap: 0.75rem; margin-top: 1rem;">
+                        <input type="checkbox" id="calcKit" style="width: 20px; height: 20px; accent-color: var(--gold-primary);">
+                        <label for="calcKit" style="font-size: 0.95rem; cursor: pointer; color: #ffffff;">
+                            Include Starter Weapon Kit (+₹650 one-time: Bamboo Staff + Uniform Bag + Finger Tape)
+                        </label>
+                    </div>
+                </div>
+
+                <div class="calc-summary">
+                    <span style="font-size: 0.85rem; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 0.05em; font-weight: 700;">Estimated Tuition Total</span>
+                    <div class="calc-price" id="calculatedPrice">₹4,050</div>
+                    <p id="planBreakdown" style="font-size: 0.85rem; color: var(--text-gold); margin-bottom: 1.5rem;">3 Months enrollment (10% discount applied)</p>
+                    <a href="{{ url_for('book_trial') }}" class="btn btn-primary" style="width: 100%;">
+                        Book Trial Before Enrollment &rarr;
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

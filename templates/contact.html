@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+
+{% block title %}Contact & Arena Location | {{ academy.name }}{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">GET IN TOUCH</span>
+            <h1 class="section-title">Visit Our Training Arena</h1>
+            <p class="section-desc">Have questions about syllabus, child admission, or private master classes? Reach out or visit us in person.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1.3fr; gap: 3.5rem; align-items: start;">
+            <!-- Contact Info Cards -->
+            <div>
+                <div class="card" style="margin-bottom: 2rem; border-color: var(--border-gold);">
+                    <h3 style="margin-bottom: 1.5rem; font-size: 1.4rem;">Academy Center</h3>
+                    
+                    <div class="contact-info-list" style="gap: 1.5rem;">
+                        <div class="contact-item">
+                            <span class="icon" style="font-size: 1.4rem; color: var(--gold-primary);">📍</span>
+                            <div>
+                                <strong style="color: #ffffff; display: block;">Training Arena Address:</strong>
+                                <span>{{ academy.address }}</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <span class="icon" style="font-size: 1.4rem; color: var(--gold-primary);">📞</span>
+                            <div>
+                                <strong style="color: #ffffff; display: block;">Direct Call / Admission Desk:</strong>
+                                <a href="tel:{{ academy.phone }}" style="color: var(--gold-light);">{{ academy.phone }}</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <span class="icon" style="font-size: 1.4rem; color: var(--gold-primary);">💬</span>
+                            <div>
+                                <strong style="color: #ffffff; display: block;">WhatsApp Instant Chat:</strong>
+                                <a href="https://wa.me/{{ academy.whatsapp }}" target="_blank" style="color: #34d399;">+{{ academy.whatsapp }} (Click to Chat)</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <span class="icon" style="font-size: 1.4rem; color: var(--gold-primary);">⏰</span>
+                            <div>
+                                <strong style="color: #ffffff; display: block;">Arena Open Hours:</strong>
+                                <span>{{ academy.timings }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" style="background: rgba(10, 12, 19, 0.6);">
+                    <h4 style="margin-bottom: 0.75rem;">Visiting Guidelines</h4>
+                    <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+                        Visitors and parents are welcome to observe our ongoing batches from the spectator pavilion. 
+                        Please arrive 10 minutes prior to batch start time. Footwear must be removed before entering the sacred training floor.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Inquiry Form -->
+            <div class="form-card" style="margin: 0; width: 100%; max-width: 100%;">
+                <h3 style="margin-bottom: 1.5rem; font-size: 1.4rem;">Send a Direct Message</h3>
+                <form action="{{ url_for('contact') }}" method="POST" id="contactInquiryForm">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Your Name <span class="required">*</span></label>
+                        <input type="text" id="name" name="name" class="form-control" placeholder="Your Full Name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone" class="form-label">Phone / Mobile <span class="required">*</span></label>
+                        <input type="tel" id="phone" name="phone" class="form-control" placeholder="+91 98765 43210" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" id="email" name="email" class="form-control" placeholder="name@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject" class="form-label">Inquiry Subject</label>
+                        <select id="subject" name="subject" class="form-control">
+                            <option value="General Admission Inquiry">General Admission Inquiry</option>
+                            <option value="Private 1-on-1 Training">Private 1-on-1 Training</option>
+                            <option value="School / College Workshop">School / College Workshop</option>
+                            <option value="Tournament & Sports Quota">Tournament & Sports Quota</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message Details <span class="required">*</span></label>
+                        <textarea id="message" name="message" class="form-control" rows="4" placeholder="Tell us about what you are looking for..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; margin-top: 1rem;" id="submitContactBtn">
+                        ✉️ Submit Message to Academy
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ academy.name }} | Ancient Tamil Martial Arts Academy{% endblock %}</title>
+    <meta name="description" content="Join {{ academy.name }}. Authentic Silambam stick martial arts training, weapons mastery, and self-defense for all ages in Tamil Nadu. Book a free trial class today.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Tiro+Tamil&display=swap" rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    {% block head_extra %}{% endblock %}
+</head>
+<body>
+    <!-- Top Announcement Bar -->
+    <aside class="announcement-bar" aria-label="Announcement">
+        <div class="container bar-content">
+            <span class="bar-tag">🔥 ADMISSIONS OPEN 2026</span>
+            <span class="bar-text">Weekend & Daily Batches for Kids, Youths & Adults • Free Trial Session Available!</span>
+            <a href="{{ url_for('book_trial') }}" class="bar-link">Claim Free Pass &rarr;</a>
+        </div>
+    </aside>
+
+    <!-- Navigation Header -->
+    <header class="site-header" id="siteHeader">
+        <div class="container nav-wrapper">
+            <a href="{{ url_for('home') }}" class="brand-logo" id="brandLogo">
+                <div class="logo-symbol">
+                    <span class="symbol-stick">⚔️</span>
+                </div>
+                <div class="logo-text">
+                    <span class="brand-tamil">{{ academy.tamil_name }}</span>
+                    <span class="brand-title">{{ academy.name }}</span>
+                </div>
+            </a>
+
+            <!-- Mobile Navigation Toggle -->
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <!-- Navigation Links -->
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="{{ url_for('home') }}" class="nav-link {% if request.endpoint == 'home' %}active{% endif %}">Home</a></li>
+                    <li><a href="{{ url_for('programs') }}" class="nav-link {% if request.endpoint == 'programs' %}active{% endif %}">Programs</a></li>
+                    <li><a href="{{ url_for('weapons') }}" class="nav-link {% if request.endpoint == 'weapons' %}active{% endif %}">Weapons</a></li>
+                    <li><a href="{{ url_for('schedule') }}" class="nav-link {% if request.endpoint == 'schedule' %}active{% endif %}">Schedule & Fees</a></li>
+                    <li><a href="{{ url_for('contact') }}" class="nav-link {% if request.endpoint == 'contact' %}active{% endif %}">Contact</a></li>
+                    <li><a href="{{ url_for('admin_dashboard') }}" class="nav-link admin-pill {% if 'admin' in request.endpoint %}active{% endif %}">Admin Portal</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="{{ url_for('book_trial') }}" class="btn btn-primary" id="navTrialBtn">
+                        <span class="btn-glow"></span>
+                        Book Free Trial
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Flash Messages Container -->
+    <div class="container flash-container" id="flashContainer">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">
+                        <span class="alert-icon">
+                            {% if category == 'success' %}✓{% elif category == 'danger' %}⚠{% else %}ℹ{% endif %}
+                        </span>
+                        <span class="alert-text">{{ message }}</span>
+                        <button type="button" class="alert-close" onclick="this.parentElement.remove();">&times;</button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+
+    <!-- Main Content Body -->
+    <main class="main-content" id="mainContent">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Floating WhatsApp Quick Connect Widget -->
+    <a href="https://wa.me/{{ academy.whatsapp }}?text=Hello%20Ashan!%20I%20am%20interested%20in%20joining%20Silambam%20classes." 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="whatsapp-float" 
+       id="whatsappFloat" 
+       title="Chat with Master on WhatsApp">
+        <span class="whatsapp-icon">💬</span>
+        <span class="whatsapp-label">Chat with Guru</span>
+    </a>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <div class="footer-brand">
+                    <span class="footer-tamil">{{ academy.tamil_name }}</span>
+                    <h3 class="footer-name">{{ academy.name }}</h3>
+                </div>
+                <p class="footer-desc">
+                    Dedicated to preserving and promoting the sacred, ancient Tamil warrior art of Silambam. 
+                    Nurturing discipline, self-defense, weapon mastery, and warrior spirit for generations.
+                </p>
+                <div class="footer-badges">
+                    <span class="badge">⚔️ Sage Agastya Lineage</span>
+                    <span class="badge">🏆 Govt. Recognized</span>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-heading">Training Curriculum</h4>
+                <ul class="footer-links">
+                    <li><a href="{{ url_for('programs') }}#kids">Balakalar (Kids Batch)</a></li>
+                    <li><a href="{{ url_for('programs') }}#adults">Yodha (Adult Foundations)</a></li>
+                    <li><a href="{{ url_for('programs') }}#weapons">Ayudha Vidya (Ancient Weapons)</a></li>
+                    <li><a href="{{ url_for('programs') }}#women">Nari Shakti (Self-Defense)</a></li>
+                    <li><a href="{{ url_for('weapons') }}">Silambam Weapons Encyclopedia</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-heading">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="{{ url_for('book_trial') }}">Book Free Trial Class</a></li>
+                    <li><a href="{{ url_for('schedule') }}">Batch Timings & Fees</a></li>
+                    <li><a href="{{ url_for('contact') }}">Locate Training Arena</a></li>
+                    <li><a href="{{ url_for('admin_dashboard') }}">Admin Registration Log</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4 class="footer-heading">Academy Center</h4>
+                <div class="contact-info-list">
+                    <p class="contact-item">
+                        <span class="icon">📍</span>
+                        <span>{{ academy.address }}</span>
+                    </p>
+                    <p class="contact-item">
+                        <span class="icon">📞</span>
+                        <a href="tel:{{ academy.phone }}">{{ academy.phone }}</a>
+                    </p>
+                    <p class="contact-item">
+                        <span class="icon">✉️</span>
+                        <a href="mailto:{{ academy.email }}">{{ academy.email }}</a>
+                    </p>
+                    <p class="contact-item">
+                        <span class="icon">⏰</span>
+                        <span>{{ academy.timings }}</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-flex">
+                <p>&copy; 2026 {{ academy.name }}. All Rights Reserved. Preserving Tamil Martial Heritage.</p>
+                <p class="guru-credit">Under the guidance of <strong>{{ academy.head_master }}</strong></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    {% block scripts_extra %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+{% block title %}Training Programs & Syllabus | {{ academy.name }}{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">ACADEMY SYLLABUS</span>
+            <h1 class="section-title">Comprehensive Silambam Curriculum</h1>
+            <p class="section-desc">
+                From foundational footwork to traditional warrior weaponry. A progressive, scientifically grounded syllabus preserving centuries of martial heritage.
+            </p>
+        </div>
+
+        <!-- Belt Progression Hierarchy -->
+        <div class="card" style="margin-bottom: 4rem; border-color: var(--border-gold);">
+            <h3 style="font-size: 1.6rem; margin-bottom: 1.5rem; text-align: center;">Traditional Level & Belt Progression</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+                <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); border-top: 3px solid #f1f5f9; padding: 1.25rem; border-radius: var(--radius-md);">
+                    <strong style="color: #f1f5f9; font-size: 1.1rem; display: block; margin-bottom: 0.5rem;">⚪ Level 1: White</strong>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary);">Salutations (Vanakkam), Silambam history, Kaalvarisai 1–4, stick grip & stance balance.</p>
+                </div>
+                <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); border-top: 3px solid #eab308; padding: 1.25rem; border-radius: var(--radius-md);">
+                    <strong style="color: #eab308; font-size: 1.1rem; display: block; margin-bottom: 0.5rem;">🟡 Level 2: Yellow</strong>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary);">Kaalvarisai 5–8, continuous rotational swinging (Vetukol), single-stick defensive parries.</p>
+                </div>
+                <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); border-top: 3px solid #22c55e; padding: 1.25rem; border-radius: var(--radius-md);">
+                    <strong style="color: #22c55e; font-size: 1.1rem; display: block; margin-bottom: 0.5rem;">🟢 Level 3: Green</strong>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary);">Full 18 Footwork variations, dual-handed twin sticks (Kurunkambu), introductory sparring.</p>
+                </div>
+                <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); border-top: 3px solid #b45309; padding: 1.25rem; border-radius: var(--radius-md);">
+                    <strong style="color: #f59e0b; font-size: 1.1rem; display: block; margin-bottom: 0.5rem;">🟤 Level 4: Brown</strong>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary);">Competitive state tournament combat, Maduvu (Deer Horns) trapping, counter-attacking.</p>
+                </div>
+                <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle); border-top: 3px solid #ef4444; padding: 1.25rem; border-radius: var(--radius-md);">
+                    <strong style="color: #ef4444; font-size: 1.1rem; display: block; margin-bottom: 0.5rem;">⚫ Level 5: Black / Ashan</strong>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary);">Surul Vaal (Flexible sword), Sword & Shield, Varma Kalai pressure points, teaching certification.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Detailed Batches -->
+        <div style="display: flex; flex-direction: column; gap: 3rem;">
+            <!-- Program 1 -->
+            <div class="card" id="kids" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: center;">
+                <div>
+                    <span class="section-tag">AGES 5 TO 12</span>
+                    <h3>Balakalar (Junior Warriors)</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1.25rem;">
+                        Children possess natural rhythm and adaptability. Our junior program builds physical core strength, 
+                        improves attention span, cultivates humility and respect for peers and elders, and instills anti-bullying instincts.
+                    </p>
+                    <ul class="program-features">
+                        <li><strong>Safe Equipment:</strong> Lightweight cane sticks tailored to child’s height</li>
+                        <li><strong>Games & Agility:</strong> Reflex drills, spatial awareness, and posture alignment</li>
+                        <li><strong>Grading & Medals:</strong> Periodic assessments and district level junior tournaments</li>
+                    </ul>
+                    <a href="{{ url_for('book_trial') }}" class="btn btn-primary" style="margin-top: 1rem;">Book Child’s Free Trial &rarr;</a>
+                </div>
+                <div style="border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-subtle);">
+                    <img src="{{ url_for('static', filename='images/training.jpg') }}" alt="Children training silambam" style="width: 100%; height: 320px; object-fit: cover;">
+                </div>
+            </div>
+
+            <!-- Program 2 -->
+            <div class="card" id="adults" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: center;">
+                <div style="border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-subtle); order: 2;">
+                    <img src="{{ url_for('static', filename='images/hero-bg.jpg') }}" alt="Adult warrior practicing" style="width: 100%; height: 320px; object-fit: cover;">
+                </div>
+                <div style="order: 1;">
+                    <span class="section-tag">TEENS & ADULTS</span>
+                    <h3>Yodha (General & Fitness Batch)</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1.25rem;">
+                        Designed for teenagers, university students, and working adults seeking dynamic martial art fitness, 
+                        joint mobility, stress relief, and practical combat readiness.
+                    </p>
+                    <ul class="program-features">
+                        <li><strong>Endurance & Calorie Burn:</strong> Full-body rotational workout burning 600+ kcal/session</li>
+                        <li><strong>Dual-Stick Speed:</strong> Synchronizing left and right hemispheres of the brain</li>
+                        <li><strong>Practical Defense:</strong> How to defend using umbrellas, canes, or everyday objects</li>
+                    </ul>
+                    <a href="{{ url_for('book_trial') }}" class="btn btn-primary" style="margin-top: 1rem;">Join Adult Batch &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Program 3 -->
+            <div class="card" id="weapons" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: center;">
+                <div>
+                    <span class="section-tag">ADVANCED DISCIPLINES</span>
+                    <h3>Ayudha Vidya (Sacred Weaponry)</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1.25rem;">
+                        Once the foundational bamboo staff is mastered, the practitioner advances to the authentic weapons 
+                        of the Chola and Pandya royal guards.
+                    </p>
+                    <ul class="program-features">
+                        <li><strong>Maduvu:</strong> Deer horn defensive thrusting and wrist-disarming</li>
+                        <li><strong>Surul Vaal:</strong> Continuous whipping circles creating an impenetrable shield</li>
+                        <li><strong>Kattari & Sedikuchi:</strong> Punch daggers and close-range rapid combat</li>
+                    </ul>
+                    <a href="{{ url_for('weapons') }}" class="btn btn-secondary" style="margin-top: 1rem;">Explore All Weapons &rarr;</a>
+                </div>
+                <div style="border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-subtle);">
+                    <img src="{{ url_for('static', filename='images/weapons.jpg') }}" alt="Silambam weapons" style="width: 100%; height: 320px; object-fit: cover;">
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 4rem;">
+            <a href="{{ url_for('book_trial') }}" class="btn btn-primary btn-lg">Book Your Free Trial Today &rarr;</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

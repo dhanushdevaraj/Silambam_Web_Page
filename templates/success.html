@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}Trial Session Reserved | {{ academy.name }}{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div class="success-card">
+            <div class="success-icon-badge">✓</div>
+            <span class="section-tag">REGISTRATION CONFIRMED</span>
+            <h1 style="font-size: 2.2rem; margin: 0.5rem 0 1rem 0;">வணக்கம்! Your Trial Class is Reserved</h1>
+            
+            <p style="color: var(--text-secondary); font-size: 1.05rem; margin-bottom: 2rem;">
+                Thank you for taking the first step towards mastering ancient Tamil martial arts. 
+                Our instructor team has recorded your details.
+            </p>
+
+            <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-gold); border-radius: var(--radius-md); padding: 1.5rem; margin-bottom: 2.5rem; text-align: left;">
+                <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.75rem; margin-bottom: 0.75rem;">
+                    <span style="color: var(--text-muted); font-size: 0.9rem;">Booking Reference ID:</span>
+                    <strong style="color: var(--gold-light); font-family: monospace; font-size: 1.1rem;">#SILAMBAM-{{ booking_id }}</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.75rem; margin-bottom: 0.75rem;">
+                    <span style="color: var(--text-muted); font-size: 0.9rem;">Academy Arena:</span>
+                    <span style="color: #ffffff; font-size: 0.9rem; text-align: right;">{{ academy.address }}</span>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                    <span style="color: var(--text-muted); font-size: 0.9rem;">Chief Guru:</span>
+                    <strong style="color: #ffffff; font-size: 0.9rem;">{{ academy.head_master }}</strong>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="https://wa.me/{{ academy.whatsapp }}?text=Vanakkam%20Ashan!%20I%20have%20registered%20for%20a%20free%20Silambam%20trial%20class.%20My%20Booking%20ID%20is%20%23SILAMBAM-{{ booking_id }}." 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="btn btn-primary" id="successWhatsappBtn">
+                    💬 Notify Guru on WhatsApp
+                </a>
+                <a href="{{ url_for('home') }}" class="btn btn-secondary">
+                    Return to Homepage
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

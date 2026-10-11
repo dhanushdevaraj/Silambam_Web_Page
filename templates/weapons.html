@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+
+{% block title %}Traditional Weapons of Silambam | {{ academy.name }}{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">TRADITIONAL ARSENAL</span>
+            <h1 class="section-title">Weapons of Ancient Tamil Warriors</h1>
+            <p class="section-desc">
+                In Silambam tradition, weapons are revered as sacred extensions of the human nervous system. 
+                Explore the weapons taught at {{ academy.name }}.
+            </p>
+        </div>
+
+        <div style="margin-bottom: 4rem; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-gold); box-shadow: var(--shadow-glow);">
+            <img src="{{ url_for('static', filename='images/weapons.jpg') }}" alt="Traditional Silambam Weapons collection" style="width: 100%; height: 420px; object-fit: cover;">
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 2.5rem;">
+            <!-- Weapon 1 -->
+            <div class="card" style="border-left: 4px solid var(--gold-primary);">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; margin-bottom: 0.75rem;">
+                    <h3>1. நெடுங்கம்பு — Nedunkambu (Long Bamboo Staff)</h3>
+                    <span class="badge" style="background: rgba(245, 158, 11, 0.2); color: var(--gold-light); border: 1px solid var(--border-gold); padding: 0.25rem 0.75rem; border-radius: var(--radius-full); font-size: 0.8rem;">Core Weapon</span>
+                </div>
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                    The primary weapon of Silambam. Made of seasoned Kizhi or Male Bamboo treated with herbal oils to achieve maximum flexibility without splintering. 
+                    The staff is measured individually from the student’s toes to their eyebrows.
+                </p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; background: rgba(0,0,0,0.3); padding: 1rem; border-radius: var(--radius-sm); font-size: 0.85rem;">
+                    <div><strong>Length:</strong> 5.5 to 6 Feet (1.68m)</div>
+                    <div><strong>Key Movements:</strong> Vetukol (Chop), Thadupukol (Block), Kuthukol (Thrust)</div>
+                    <div><strong>Prerequisite:</strong> Beginner onwards</div>
+                </div>
+            </div>
+
+            <!-- Weapon 2 -->
+            <div class="card" style="border-left: 4px solid var(--gold-light);">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; margin-bottom: 0.75rem;">
+                    <h3>2. குறுங்கம்பு — Kurunkambu (Double Short Sticks)</h3>
+                    <span class="badge" style="background: rgba(245, 158, 11, 0.2); color: var(--gold-light); border: 1px solid var(--border-gold); padding: 0.25rem 0.75rem; border-radius: var(--radius-full); font-size: 0.8rem;">Intermediate</span>
+                </div>
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                    Two matching wooden sticks held in either hand. The practitioner executes rapid alternating strikes and blocks, training both sides of the brain to operate with equal lightning velocity.
+                </p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; background: rgba(0,0,0,0.3); padding: 1rem; border-radius: var(--radius-sm); font-size: 0.85rem;">
+                    <div><strong>Length:</strong> 2 to 2.5 Feet (60 cm)</div>
+                    <div><strong>Key Movements:</strong> Dual-wielding rotational cross-blocks, neck and knee traps</div>
+                    <div><strong>Prerequisite:</strong> Yellow Belt</div>
+                </div>
+            </div>
+
+            <!-- Weapon 3 -->
+            <div class="card" style="border-left: 4px solid #ef4444;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; margin-bottom: 0.75rem;">
+                    <h3>3. சுருள் வாள் — Surul Vaal (Flexible Ribbon Sword)</h3>
+                    <span class="badge" style="background: rgba(239, 68, 68, 0.2); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.4); padding: 0.25rem 0.75rem; border-radius: var(--radius-full); font-size: 0.8rem;">Master Level Only</span>
+                </div>
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                    One of the most lethal and respected weapons in ancient warfare. Consists of multiple razor-sharp flexible steel strips fastened to a handle. 
+                    The momentum of the sword must never stop during execution; if momentum pauses, the user risks slicing themselves. Taught strictly after years of discipline.
+                </p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; background: rgba(0,0,0,0.3); padding: 1rem; border-radius: var(--radius-sm); font-size: 0.85rem;">
+                    <div><strong>Blade Count:</strong> 1 to 4 Flexible Spring Blades</div>
+                    <div><strong>Application:</strong> Defensive ring against cavalry or surrounding infantry</div>
+                    <div><strong>Prerequisite:</strong> Black Belt / Ashan authorization</div>
+                </div>
+            </div>
+
+            <!-- Weapon 4 -->
+            <div class="card" style="border-left: 4px solid #3b82f6;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; margin-bottom: 0.75rem;">
+                    <h3>4. மடுவு / மான்கொம்பு — Maduvu (Deer Horns)</h3>
+                    <span class="badge" style="background: rgba(59, 130, 246, 0.2); color: #93c5fd; border: 1px solid rgba(59, 130, 246, 0.4); padding: 0.25rem 0.75rem; border-radius: var(--radius-full); font-size: 0.8rem;">Advanced Heritage</span>
+                </div>
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                    Traditionally constructed from shed blackbuck horns linked by a central grip and fortified with metal points. 
+                    Used for parrying long swords or spears, trapping the opponent’s weapon between the horns, and delivering instant counters.
+                </p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; background: rgba(0,0,0,0.3); padding: 1rem; border-radius: var(--radius-sm); font-size: 0.85rem;">
+                    <div><strong>Composition:</strong> Dual opposing horns with hand shield / guard</div>
+                    <div><strong>Function:</strong> Close-range disarmament & body locks</div>
+                    <div><strong>Prerequisite:</strong> Brown Belt</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" style="margin-top: 4rem; text-align: center; border-color: var(--border-gold); background: linear-gradient(135deg, rgba(22, 26, 42, 0.95), rgba(10, 12, 19, 0.95));">
+            <h3 style="margin-bottom: 1rem;">Ethical Oath of Silambam</h3>
+            <p style="max-width: 700px; margin: 0 auto 1.5rem auto; color: var(--text-secondary); font-style: italic;">
+                "The weapons of Silambam are bestowed solely for protection, defense of the weak, and preservation of righteousness. Never for aggression or cruelty."
+            </p>
+            <a href="{{ url_for('book_trial') }}" class="btn btn-primary">Start Training Today &rarr;</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

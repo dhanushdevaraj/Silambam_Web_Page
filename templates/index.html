@@ -1,0 +1,488 @@
+{% extends "base.html" %}
+
+{% block title %}{{ academy.name }} | Master Ancient Silambam Martial Arts{% endblock %}
+
+{% block content %}
+<!-- HERO SECTION -->
+<section class="hero-section" style="background-image: url('{{ url_for('static', filename='images/hero-bg.jpg') }}');">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+        <div class="hero-badge">
+            <span>🛡️ 3,000+ Year Ancient Tamil Warrior Heritage</span>
+        </div>
+        <h1 class="hero-title">
+            Awaken The Warrior Within.
+            <span class="highlight">Master Ancient Silambam.</span>
+        </h1>
+        <p class="hero-subtitle">
+            Authentic traditional stick fighting, sacred weaponry, razor-sharp reflexes, and unshakeable discipline. 
+            Train under recognized masters for self-defense, fitness, and tournament glory.
+        </p>
+        <div class="hero-cta-group">
+            <a href="#trial-booking" class="btn btn-primary btn-lg" id="heroBookTrialBtn">
+                ⚡ Book Free Trial Session
+            </a>
+            <a href="{{ url_for('programs') }}" class="btn btn-secondary btn-lg" id="heroExploreBtn">
+                Explore Curriculum
+            </a>
+        </div>
+
+        <div class="hero-stats">
+            <div class="stat-item">
+                <span class="stat-num">500+</span>
+                <span class="stat-label">Students Trained</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-num">25+</span>
+                <span class="stat-label">Years Lineage</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-num">18+</span>
+                <span class="stat-label">Weapons Mastery</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-num">100%</span>
+                <span class="stat-label">Authentic Gurukulam</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT & HERITAGE SECTION -->
+<section class="section" id="about">
+    <div class="container">
+        <div class="heritage-grid">
+            <div class="heritage-visual">
+                <div class="heritage-image-wrapper">
+                    <img src="{{ url_for('static', filename='images/training.jpg') }}" alt="Silambam class training session" loading="lazy">
+                </div>
+                <div class="experience-badge">
+                    <span class="num">25+</span>
+                    <span class="text">Years of Teaching</span>
+                </div>
+            </div>
+            <div class="heritage-info">
+                <span class="section-tag">ANCIENT TAMIL MARTIAL TRADITION</span>
+                <h3>The Living Heritage of Sage Agastya & Tamil Kings</h3>
+                <p>
+                    Silambam (சிலம்பம்) is one of the world's oldest martial arts, documented in ancient Sangam literature 
+                    over three millennia ago. Practiced by Chola, Chera, and Pandya warriors, it uses high-speed bamboo staff manipulation 
+                    and intricate footwork (Kaalvarisai) to neutralize attackers in seconds.
+                </p>
+                <p>
+                    At <strong>{{ academy.name }}</strong>, we preserve this lineage without watering down its lethal speed, mental focus, 
+                    and spiritual depth. Every student learns respectful traditions, body conditioning, and total mastery of weapon and mind.
+                </p>
+                <div class="pillars-grid">
+                    <div class="pillar-item">
+                        <span class="pillar-icon">⚡</span>
+                        <div>
+                            <h5>Lightning Reflexes</h5>
+                            <small style="color: var(--text-muted);">Spontaneous 360° situational awareness</small>
+                        </div>
+                    </div>
+                    <div class="pillar-item">
+                        <span class="pillar-icon">🥋</span>
+                        <div>
+                            <h5>Real Self-Defense</h5>
+                            <small style="color: var(--text-muted);">Practical neutralizing moves for all ages</small>
+                        </div>
+                    </div>
+                    <div class="pillar-item">
+                        <span class="pillar-icon">🧘</span>
+                        <div>
+                            <h5>Discipline & Focus</h5>
+                            <small style="color: var(--text-muted);">Mental clarity and physical stamina</small>
+                        </div>
+                    </div>
+                    <div class="pillar-item">
+                        <span class="pillar-icon">🏆</span>
+                        <div>
+                            <h5>Sports & Medals</h5>
+                            <small style="color: var(--text-muted);">District, State & National representation</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TRAINING PROGRAMS SECTION -->
+<section class="section section-alt" id="programs">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">CURRICULUM FOR ALL AGES</span>
+            <h2 class="section-title">Structured Training Programs</h2>
+            <p class="section-desc">From children taking their first steps to advanced martial artists mastering steel weaponry.</p>
+        </div>
+
+        <div class="programs-grid">
+            <!-- Program 1: Kids -->
+            <div class="card program-card">
+                <span class="program-card-badge">Ages 5 - 12</span>
+                <div>
+                    <div class="program-icon-box">🧒</div>
+                    <h3>Balakalar (Kids Batch)</h3>
+                    <p>Designed to instill coordination, posture, flexibility, and focus while having fun in a safe, disciplined environment.</p>
+                    <ul class="program-features">
+                        <li>Basic Footwork (Kaalvarisai 1-6)</li>
+                        <li>Single Bamboo Staff Foundation</li>
+                        <li>Agility, Respect & Anti-Bullying Confidence</li>
+                    </ul>
+                </div>
+                <a href="#trial-booking" class="btn btn-secondary btn-sm">Enroll Child &rarr;</a>
+            </div>
+
+            <!-- Program 2: Adults -->
+            <div class="card program-card">
+                <span class="program-card-badge">Ages 13+ & Adults</span>
+                <div>
+                    <div class="program-icon-box">⚔️</div>
+                    <h3>Yodha (Teens & Adults)</h3>
+                    <p>Comprehensive training for fitness, speed, combat footwork, and realistic street defense techniques.</p>
+                    <ul class="program-features">
+                        <li>Dual Stick Combat & Speed Rotations</li>
+                        <li>Defense against multiple armed opponents</li>
+                        <li>Full-body cardio, stamina & joint health</li>
+                    </ul>
+                </div>
+                <a href="#trial-booking" class="btn btn-secondary btn-sm">Join Batch &rarr;</a>
+            </div>
+
+            <!-- Program 3: Weaponry -->
+            <div class="card program-card">
+                <span class="program-card-badge">Advanced Level</span>
+                <div>
+                    <div class="program-icon-box">🗡️</div>
+                    <h3>Ayudha Vidya (Ancient Weapons)</h3>
+                    <p>Mastery of rare traditional Tamil weapons: Deer horns (Maduvu), flexible whip sword (Surul Vaal), and spears.</p>
+                    <ul class="program-features">
+                        <li>Maduvu (Chinkara Deer Horn strikes)</li>
+                        <li>Surul Vaal (Multi-blade flexible steel whip)</li>
+                        <li>Vaal & Kedayam (Sword & Shield sparring)</li>
+                    </ul>
+                </div>
+                <a href="{{ url_for('weapons') }}" class="btn btn-secondary btn-sm">Explore Weapons &rarr;</a>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+            <a href="{{ url_for('programs') }}" class="btn btn-primary">View Full Belt Syllabus & Grading &rarr;</a>
+        </div>
+    </div>
+</section>
+
+<!-- WEAPONS SHOWCASE HIGHLIGHT -->
+<section class="section" id="weapons">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">SACRED WEAPONRY</span>
+            <h2 class="section-title">The Arsenal of Silambam</h2>
+            <p class="section-desc">Each weapon develops a distinct neurological pathway, balance, and warrior philosophy.</p>
+        </div>
+
+        <div class="weapons-grid">
+            <div class="weapon-card">
+                <span class="weapon-tag">நெடுங்கம்பு</span>
+                <h4>Nedunkambu (Bamboo Staff)</h4>
+                <p>The core soul of Silambam. Measured to reach the practitioner’s forehead. Delivers strikes exceeding 150 km/h with continuous rotational momentum.</p>
+                <div class="weapon-specs">
+                    <span>Length: <strong>1.68m (5.5 ft)</strong></span>
+                    <span>Material: <strong>Kizhi Bamboo</strong></span>
+                </div>
+            </div>
+
+            <div class="weapon-card">
+                <span class="weapon-tag">குறுங்கம்பு</span>
+                <h4>Kurunkambu (Double Sticks)</h4>
+                <p>Short fighting batons used in dual hands simultaneously. Builds equal ambidexterity, defensive parries, and ultra-fast close-quarter traps.</p>
+                <div class="weapon-specs">
+                    <span>Length: <strong>60 cm (2 ft)</strong></span>
+                    <span>Pair: <strong>Two Hands</strong></span>
+                </div>
+            </div>
+
+            <div class="weapon-card">
+                <span class="weapon-tag">சுருள் வாள்</span>
+                <h4>Surul Vaal (Flexible Ribbon Sword)</h4>
+                <p>The most dangerous and awe-inspiring weapon. Coiled flexible steel blades that whip and slice in continuous hypnotic arcs, creating an impenetrable sphere.</p>
+                <div class="weapon-specs">
+                    <span>Reach: <strong>1.5m whip</strong></span>
+                    <span>Skill: <strong>Grandmaster Level</strong></span>
+                </div>
+            </div>
+
+            <div class="weapon-card">
+                <span class="weapon-tag">மடுவு / மான்கொம்பு</span>
+                <h4>Maduvu (Deer Horns)</h4>
+                <p>Ancient close-combat parrying weapon crafted from naturally shed deer horns tipped with brass/steel spikes, designed to lock enemy weapons and counter-strike.</p>
+                <div class="weapon-specs">
+                    <span>Type: <strong>Defensive & Hooking</strong></span>
+                    <span>Heritage: <strong>Sangam Era</strong></span>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 2.5rem;">
+            <a href="{{ url_for('weapons') }}" class="btn btn-secondary">Learn More About Traditional Weapons &rarr;</a>
+        </div>
+    </div>
+</section>
+
+<!-- MASTER PROFILE -->
+<section class="section section-alt">
+    <div class="container">
+        <div class="master-card">
+            <div class="master-photo-box">
+                <img src="{{ url_for('static', filename='images/master.jpg') }}" alt="Chief Instructor of {{ academy.name }}" loading="lazy">
+            </div>
+            <div class="master-details">
+                <span class="guru-title">FOUNDER & CHIEF GURU</span>
+                <h3>{{ academy.head_master }}</h3>
+                <p class="master-quote">
+                    "Silambam is not merely swinging a piece of bamboo; it is a sacred meditation where your breath, your footwork, and your weapon merge into single consciousness."
+                </p>
+                <p>
+                    Practicing and teaching traditional martial arts for over two decades, Ashan Manikandan has trained state gold medalists, 
+                    international demonstration squads, and coached students across Dharmapuri in self-discipline and self-protection.
+                </p>
+                <div class="master-credentials">
+                    <span class="credential-pill">🎖️ 25+ Yrs Teaching</span>
+                    <span class="credential-pill">🏛️ State Association Certified</span>
+                    <span class="credential-pill">🛡️ Varma Kalai Practitioner</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TIMETABLE HIGHLIGHT -->
+<section class="section" id="schedule">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">TRAINING BATCHES</span>
+            <h2 class="section-title">Class Schedule & Timings</h2>
+            <p class="section-desc">Convenient morning, evening, and weekend batches tailored for working professionals and school students.</p>
+        </div>
+
+        <div class="timetable-container">
+            <table class="timetable-table">
+                <thead>
+                    <tr>
+                        <th>Batch Name</th>
+                        <th>Target Group</th>
+                        <th>Days</th>
+                        <th>Timing</th>
+                        <th>Focus</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="batch-tag tag-morning">Morning Warrior</span></td>
+                        <td>Adults & Teens</td>
+                        <td>Mon, Wed, Fri</td>
+                        <td><strong>6:00 AM - 7:15 AM</strong></td>
+                        <td>Stamina, Speed Rotations & Footwork</td>
+                    </tr>
+                    <tr>
+                        <td><span class="batch-tag tag-evening">Junior Champions</span></td>
+                        <td>Kids (5 - 12 Years)</td>
+                        <td>Tue, Thu, Sat</td>
+                        <td><strong>5:00 PM - 6:15 PM</strong></td>
+                        <td>Foundation, Agility & Focus</td>
+                    </tr>
+                    <tr>
+                        <td><span class="batch-tag tag-evening">Evening General</span></td>
+                        <td>All Skill Levels</td>
+                        <td>Mon, Wed, Fri</td>
+                        <td><strong>6:30 PM - 8:00 PM</strong></td>
+                        <td>Sparring, Defense & Combinations</td>
+                    </tr>
+                    <tr>
+                        <td><span class="batch-tag tag-weekend">Weekend Intensive</span></td>
+                        <td>Professionals & Commuters</td>
+                        <td>Saturday & Sunday</td>
+                        <td><strong>6:30 AM - 8:30 AM</strong></td>
+                        <td>In-depth Forms & Weapons Training</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="{{ url_for('schedule') }}" class="btn btn-secondary">Open Tuition Fee Calculator & Detailed Schedule &rarr;</a>
+        </div>
+    </div>
+</section>
+
+<!-- TRIAL BOOKING FORM SECTION (SQLITE BACKED) -->
+<section class="section booking-section-wrapper" id="trial-booking">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">JOIN OUR GURUKULAM</span>
+            <h2 class="section-title">Book Your Free Trial Class</h2>
+            <p class="section-desc">
+                Experience the power and grace of Silambam firsthand. No prior martial arts experience required. 
+                Training bamboo staff will be provided during the trial session.
+            </p>
+        </div>
+
+        <div class="form-card">
+            <form action="{{ url_for('book_trial') }}" method="POST" id="homeTrialForm">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Full Name <span class="required">*</span></label>
+                        <input type="text" id="name" name="name" class="form-control" placeholder="e.g. Aravind Swamy" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone" class="form-label">Phone / WhatsApp Number <span class="required">*</span></label>
+                        <input type="tel" id="phone" name="phone" class="form-control" placeholder="e.g. +91 98765 43210" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" id="email" name="email" class="form-control" placeholder="aravind@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="age" class="form-label">Student Age</label>
+                        <input type="number" id="age" name="age" class="form-control" placeholder="e.g. 14" min="5" max="80">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="experience" class="form-label">Experience Level</label>
+                        <select id="experience" name="experience" class="form-control">
+                            <option value="Complete Beginner">Complete Beginner (First time)</option>
+                            <option value="Practiced Basics">Practiced Basics before</option>
+                            <option value="Advanced / Other Martial Arts">Advanced (Transfer from Karate/Taekwondo/Kung-fu)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="batch" class="form-label">Preferred Batch Timing</label>
+                        <select id="batch" name="batch" class="form-control">
+                            <option value="Morning Batch (6:00 AM - 7:15 AM)">Morning Batch (6:00 AM - 7:15 AM)</option>
+                            <option value="Junior Kids (5:00 PM - 6:15 PM)">Junior Kids (5:00 PM - 6:15 PM)</option>
+                            <option value="Evening Batch (6:30 PM - 8:00 PM)">Evening Batch (6:30 PM - 8:00 PM)</option>
+                            <option value="Weekend Intensive (Sat & Sun)">Weekend Intensive (Sat & Sun)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="preferred_date" class="form-label">Preferred Trial Date</label>
+                        <input type="date" id="preferred_date" name="preferred_date" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notes" class="form-label">Fitness Goals or Notes</label>
+                        <input type="text" id="notes" name="notes" class="form-control" placeholder="e.g. Self-defense, weight loss, discipline">
+                    </div>
+
+                    <div class="form-group full-width" style="margin-top: 1rem; text-align: center;">
+                        <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;" id="submitTrialBtn">
+                            ⚔️ Reserve My Free Trial Spot Now
+                        </button>
+                        <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.75rem;">
+                            🔒 Your information is saved securely. We will never spam you.
+                        </p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- STUDENT & PARENT REVIEWS -->
+<section class="section section-alt">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">TESTIMONIALS</span>
+            <h2 class="section-title">What Our Students Say</h2>
+            <p class="section-desc">Real stories of transformation, agility, and pride.</p>
+        </div>
+
+        <div class="programs-grid">
+            <div class="card">
+                <div style="color: var(--gold-light); margin-bottom: 0.75rem; font-size: 1.1rem;">★★★★★</div>
+                <p style="color: var(--text-secondary); font-style: italic; margin-bottom: 1.25rem;">
+                    "Enrolling my 8-year-old daughter here was the best decision. Her concentration at school has skyrocketed and she carries herself with genuine confidence."
+                </p>
+                <strong>— S. Karthikeyan</strong>
+                <span style="font-size: 0.8rem; color: var(--text-muted); display: block;">Parent of Junior Student</span>
+            </div>
+
+            <div class="card">
+                <div style="color: var(--gold-light); margin-bottom: 0.75rem; font-size: 1.1rem;">★★★★★</div>
+                <p style="color: var(--text-secondary); font-style: italic; margin-bottom: 1.25rem;">
+                    "As a software developer sitting all day, Silambam restored my back health and wrist agility. Ashan's coaching is humble, authentic, and uncompromising on form."
+                </p>
+                <strong>— Vigneshwaran R.</strong>
+                <span style="font-size: 0.8rem; color: var(--text-muted); display: block;">Weekend Batch Student</span>
+            </div>
+
+            <div class="card">
+                <div style="color: var(--gold-light); margin-bottom: 0.75rem; font-size: 1.1rem;">★★★★★</div>
+                <p style="color: var(--text-secondary); font-style: italic; margin-bottom: 1.25rem;">
+                    "The self-defense practical drills gave me confidence when walking alone. Learning the bamboo staff makes you feel connected to our Tamil heritage."
+                </p>
+                <strong>— Meenakshi S.</strong>
+                <span style="font-size: 0.8rem; color: var(--text-muted); display: block;">Women's Batch Practitioner</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ ACCORDION -->
+<section class="section" id="faq">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">COMMON QUESTIONS</span>
+            <h2 class="section-title">Frequently Asked Questions</h2>
+        </div>
+
+        <div class="faq-list">
+            <div class="faq-item active">
+                <button type="button" class="faq-question">
+                    <span>What is the minimum age to start Silambam?</span>
+                    <span class="faq-arrow">▼</span>
+                </button>
+                <div class="faq-answer">
+                    Children can start from age 5. At this age, training focuses on playful coordination, foot balance, and basic single-stick movements before moving to contact sparring.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button type="button" class="faq-question">
+                    <span>Do I need to bring my own bamboo stick for the trial class?</span>
+                    <span class="faq-arrow">▼</span>
+                </button>
+                <div class="faq-answer">
+                    No! All practice sticks and safety equipment are provided at the arena for your trial session. If you enroll, we provide a customized stick suited to your exact height.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button type="button" class="faq-question">
+                    <span>Can adults with no prior athletic experience join?</span>
+                    <span class="faq-arrow">▼</span>
+                </button>
+                <div class="faq-answer">
+                    Absolutely! Over 40% of our adult students had never practiced martial arts before joining. The curriculum builds stamina gradually, starting with gentle warmups and basic stances.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button type="button" class="faq-question">
+                    <span>Is Silambam recognized for school/college sports quota?</span>
+                    <span class="faq-arrow">▼</span>
+                </button>
+                <div class="faq-answer">
+                    Yes. Silambam is recognized by the Ministry of Youth Affairs and Sports and the Tamil Nadu Sports Development Authority (SDAT), qualifying medalists for sports quota admissions.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
